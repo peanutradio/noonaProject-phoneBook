@@ -1,31 +1,30 @@
-import React from 'react';  
-import { Container, Row, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import ContactForm from './component/ContactForm';
-import ContactList from './component/ContactList';
+// 필요한 모듈과 컴포넌트를 import 합니다.
+import logo from "./logo.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+import ContactForm from "./components/ContactForm";
+import ContactList from "./components/ContactList";
 
-//1.왼쪽에는 연락처 등록하는 폼이, 오른쪽에는 연락처 리스트와 search 창이 있다. 
-//2.리스트에 유저 이름과 전화번호를 추가할 수 있다.
-//3. 리스트에 아이텝이 몇개가 있는지 보인다. 
-//4. 사용자가 유저를 이름으로 찾을 수 있다. 
-
+// App 컴포넌트를 정의합니다.
 function App() {
   return (
-    <div className="App">
-      <h1 className="title">연락처</h1>
-      <Container>
-        <Row>
-          <Col>
-            <ContactForm/>
-          </Col>
-          <Col>
-            <ContactList/>
-          </Col>
-        </Row>
-      </Container>
-
-    </div>
+    // Bootstrap의 Container 컴포넌트를 사용하여 내용을 감쌈
+    <Container>
+      {/* 페이지 제목을 추가합니다. */}
+      <h1 className="text-center m-3">Phone Book</h1>
+      {/* Bootstrap의 Row 컴포넌트를 사용하여 가로 행을 만듭니다. */}
+      <Row>
+        {/* 첫 번째 열: 연락처 입력 폼 */}
+        <Col className="border-column">
+          <ContactForm />
+        </Col>
+        {/* 두 번째 열: 연락처 목록 */}
+        <Col>
+          <ContactList />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
